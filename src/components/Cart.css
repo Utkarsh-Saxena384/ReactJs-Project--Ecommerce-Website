@@ -1,0 +1,23 @@
+.cart-container {
+    margin-top: 2rem;
+}
+
+.cart-container h2 {
+    margin-bottom: 2rem;
+}
+
+.cart-container .img-fluid {
+    max-height: 100px;
+}
+
+.cart-container .btn {
+    margin-top: 0.5rem;
+}
+
+.cart-container .summary-card {
+    margin-top: 2rem;
+}
+
+.cart-container .summary-card h5 {
+    margin-bottom: 1.5rem;
+}

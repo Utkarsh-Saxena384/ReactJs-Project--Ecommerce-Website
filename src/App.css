@@ -3,6 +3,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+#root {
+  height: 100%;
+}
+
 .navbar-brand {
   font-weight: bold;
 }

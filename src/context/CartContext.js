@@ -33,8 +33,13 @@ const CartProvider = ({ children }) => {
         setCartItems([]);
     };
 
+    const getCartItemQuantity = (productId) => {
+        const cartItem = cartItems.find(item => item.product.id === productId);
+        return cartItem ? cartItem.quantity : 0;
+    };
+
     return (
-        <CartContext.Provider value={{ cartItems, setCartItems, addToCart, updateCartItemQuantity, removeFromCart, clearCart }}>
+        <CartContext.Provider value={{ cartItems, setCartItems, addToCart, updateCartItemQuantity, removeFromCart, clearCart, getCartItemQuantity }}>
             {children}
         </CartContext.Provider>
     );

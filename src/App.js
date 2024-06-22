@@ -5,6 +5,8 @@ import axios from 'axios';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import Footer from './components/Footer';
 import { CartContext } from './context/CartContext';
 
 const App = () => {
@@ -21,25 +23,30 @@ const App = () => {
     };
     fetchProducts();
   }, []);
-// hello
   return (
     <Router>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Container>
-          <Navbar.Brand as={Link} to="/">E-Commerce</Navbar.Brand>
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/cart">Cart {cartItems && cartItems.length > 0 ? `(${cartItems.length})` : '(0)'}</Nav.Link>
-          </Nav>
+      <div>
+        <Navbar bg="dark" variant="dark" expand="lg">
+          <Container>
+            <Navbar.Brand as={Link} to="/">E-Commerce</Navbar.Brand>
+            <Nav className="ml-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/cart">Cart {cartItems && cartItems.length > 0 ? `(${cartItems.length})` : '(0)'}</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+        <Container className="mt-4">
+          <Routes>
+            <Route path="/" element={<ProductList products={products} />} />
+            <Route path="/product/:id" element={<ProductDetail products={products} />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
         </Container>
-      </Navbar>
-      <Container className="mt-4">
-        <Routes>
-          <Route path="/" element={<ProductList products={products} />} />
-          <Route path="/product/:id" element={<ProductDetail products={products} />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </Container>
+      </div>
+      <div className='mt-4'>
+        <Footer />
+      </div>
     </Router>
   );
 };

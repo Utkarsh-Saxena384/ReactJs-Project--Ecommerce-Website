@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { Container, Row, Col, Button, Card, ListGroup, ButtonGroup } from 'react-bootstrap';
 import { CartContext } from '../context/CartContext';
@@ -5,6 +6,7 @@ import './Cart.css';
 
 const Cart = () => {
     const { cartItems, updateCartItemQuantity, removeFromCart, clearCart } = useContext(CartContext);
+    const navigate = useNavigate();
 
     const handleIncrement = (productId) => {
         const item = cartItems.find(item => item.product.id === productId);
@@ -18,6 +20,10 @@ const Cart = () => {
         } else {
             removeFromCart(cartItems.indexOf(item));
         }
+    };
+
+    const handleCheckout = () => {
+        navigate('/checkout');
     };
 
     return (
@@ -80,7 +86,7 @@ const Cart = () => {
                                 >
                                     Clear Cart
                                 </Button>
-                                <Button variant="success" className="w-100 mt-3">
+                                <Button variant="success" className="w-100 mt-3" onClick={handleCheckout}>
                                     Proceed to Checkout
                                 </Button>
                             </Card.Body>

@@ -1,0 +1,7 @@
+.filter-btn{
+    color: #9b9d9e;
+}
+.filter-btn :hover {
+    background-color: #212529 !important;
+    border-color: #212529 !important;
+}

@@ -1,0 +1,43 @@
+.tabs-container {
+    margin-bottom: 20px;
+}
+
+.product-card {
+    margin-bottom: 20px;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* src/components/Home.css */
+.category-image {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: 768px) {
+    .category-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .category-button {
+        margin: 0 10px;
+    }
+
+    .filter-sidebar {
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+    }
+}

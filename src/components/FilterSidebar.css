@@ -1,0 +1,59 @@
+/* src/components/FilterSidebar.css */
+.filter-sidebar {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-title {
+    margin-bottom: 15px;
+    color: #007bff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.filter-form .form-group {
+    margin-bottom: 20px;
+}
+
+.filter-form .form-control {
+    border-radius: 5px;
+}
+
+.filter-button, .filter-clear-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+.filter-clear-button {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+}
+
+.filter-clear-button:hover {
+    background-color: #5a6268;
+}

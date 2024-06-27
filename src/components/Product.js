@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Card, Button, ButtonGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 import './Product.css';
 import axios from 'axios';
 
 const Product = ({ product }) => {
-    const { cartItems, addToCart, updateCartItemQuantity } = useContext(CartContext);
+    const { cartItems, addToCart, updateCartItemQuantity } = useCart();
+    const itemInCart = cartItems.find(item => item.id === product.id);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)
     const [quantity, setQuantity] = useState(1);

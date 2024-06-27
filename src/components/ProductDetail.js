@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Card, Container, Button, ButtonGroup } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 import './ProjectDetail.css';
 
 const ProductDetail = () => {
-    const { cartItems, addToCart, updateCartItemQuantity } = useContext(CartContext);
+    const { cartItems, addToCart, updateCartItemQuantity } = useCart();
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(false);
     const location = useLocation();
